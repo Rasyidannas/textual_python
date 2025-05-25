@@ -20,14 +20,14 @@ class SoundButton(Widget):
 
     def on_button_pressed(self):
         # this will send a message with name SoundMessage
-        self.post_message(SoundMessage(sound="Meow"))
+        self.post_message(SoundMessage("Meow"))
 
 class MyApp(App):
     def compose(self):
         yield SoundButton()
 
     # this is will listen the SoundMessage message
-    def on_sound_message(self, message: SoundMessage):
+    def on_sound_message(self, message):
         self.mount(Label(f"Sound now: {message.sound}"))
 
 MyApp().run()

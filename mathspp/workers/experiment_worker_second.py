@@ -19,7 +19,7 @@ class DictionaryApp(App):
 
 # [0].meanings[0].definitions[0].definition
 
-    @work(thread=True)
+    @work(exclusive=True)
     async def get_word(self, word):
         """Get measing of a word"""
         static_word = self.query_one("#word")

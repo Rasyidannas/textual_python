@@ -39,7 +39,7 @@ class WeatherApp(App):
 
     def on_worker_state_changed(self, event: Worker.StateChanged) -> None:
         """Called when the worker state changes."""
-        self.log(event)
+        self.mount(Static("worker state changes"))
 
 
 if __name__ == "__main__":
